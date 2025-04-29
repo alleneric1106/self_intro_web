@@ -31,15 +31,15 @@
       
       		<!-- Modal 標題 -->
       			<div class="modal-header border-0"style="background-color: #A0AEC0;">
+              <a href="#" class="menu-close">Close</a>
         			<h5 class="modal-title w-100 fw-bold text-uppercase" style="letter-spacing: 2px;">Menu</h5>
-        			<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       			</div>
 
       		<!-- 分隔線 -->
-      		<hr class="border-light opacity-50 my-2" />
+      		<hr class="menu-line" />
 
       		<!-- Modal 主體選單 -->
-      		<div class="modal-body d-flex flex-column gap-3"style="background-color: #A0AEC0;">
+      		<div class="menu-body">
         		<a href="/index.html" class="menu-link">個人簡介</a>
         		<a href="https://www.canva.com/design/DAGl0Uaf4dk/wZqaTboO1HZ_lqPhm7Zwjg/view?utm_content=DAGl0Uaf4dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc200dfdd9a" target="_blank" class="menu-link">求職履歷</a>
       		</div>
@@ -89,6 +89,35 @@
   padding: 0;
 }
 
+.menu-close {
+      background-image: url("images/close.svg");
+      background-position: 75% 25%;
+      background-repeat: no-repeat;
+      background-size: 2em 2em;
+      border: 0;
+      content: '';
+      display: block;
+      height: 4em;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      text-indent: 4em;
+      top: 0;
+      width: 4em;
+    }
+
+.menu-line {
+  border-color: #f8f9fa;
+}
+
+.menu-body{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #A0AEC0;
+}
+
 .top-section {
   position: fixed; /* 固定在視窗頂部 */
   top: 0x;
@@ -101,7 +130,6 @@
   align-items: center; /* 垂直方向居中對齊 */
   padding: 20px; /* 上下和左右的內邊距 */
   z-index: 888; /* 確保在其他內容之上 */
-
 }
 
 .top-section h1 {
