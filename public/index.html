@@ -10,42 +10,39 @@
 </head>
 <body>
 	<nav class="justify-content-end px-3" style="position: fixed;top: 0; left: 0; width: 100%; z-index: 1000; background-color: #A0AEC0;">
-    		<button type="button"
-        	class="d-flex align-items-center gap-2 border rounded px-3 py-2"
-        	style="position: absolute; top: 5px; right: 5px; background-color: #f8f9fa; z-index: 1001;" /* 確保按鈕在固定導覽列之上 */
-        	data-bs-toggle="modal" data-bs-target="#menuModal">
-    			<span style="font-size: 20px; font-weight: bold; font-family: 'Microsoft JhengHei', sans-serif; color: #333;">Menu</span>
+    		<button type="button" class="menu-button" data-bs-toggle="modal" data-bs-target="#menuModal">
+    			<span class="menu-icon">Menu</span>
       			<!--  icon  -->
       			<div>
-      				<div style="width: 25px; height: 2px; background: black; margin: 4px 0;"></div>
-      				<div style="width: 25px; height: 2px; background: black; margin: 4px 0;"></div>
-      				<div style="width: 25px; height: 2px; background: black; margin: 4px 0;"></div>
+      				<div class="line"></div>
+      				<div class="line"></div>
+      				<div class="line"></div>
       			</div>
     		</button>
 
   	</nav>
   	<!-- 自訂風格 Modal -->
 	<div class="modal fade" id="menuModal" tabindex="-1">
-  		<div class="modal-dialog modal-dialog-centered">
-    		<div class="modal-content bg-primary text-white rounded-4 shadow p-4 text-center" style="background-color: #A0AEC0;">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-primary text-white rounded-4 shadow p-4 text-center" style="background-color: #A0AEC0;">
       
-      		<!-- Modal 標題 -->
-      			<div class="modal-header border-0"style="background-color: #A0AEC0;">
+          <!-- Modal 標題 -->
+            <div class="menu-body">
               <a href="#" class="menu-close" data-bs-dismiss="modal">Close</a>
-        			<h5 class="modal-title w-100 fw-bold text-uppercase" style="letter-spacing: 2px;">Menu</h5>
-      			</div>
+              <h5 class="">Menu</h5>
+            </div>
 
-      		<!-- 分隔線 -->
-      		<hr class="menu-line" />
+          <!-- 分隔線 -->
+          <hr class="menu-line" />
 
-      		<!-- Modal 主體選單 -->
-      		<div class="menu-body">
-        		<a href="/index.html" class="menu-link">個人簡介</a>
-        		<a href="https://www.canva.com/design/DAGl0Uaf4dk/wZqaTboO1HZ_lqPhm7Zwjg/view?utm_content=DAGl0Uaf4dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc200dfdd9a" target="_blank" class="menu-link">求職履歷</a>
-      		</div>
-    		</div>
-  		</div>
-	</div>
+          <!-- Modal 主體選單 -->
+          <div class="menu-body">
+            <a href="/index.html" class="menu-link">個人簡介</a>
+            <a href="https://www.canva.com/design/DAGl0Uaf4dk/wZqaTboO1HZ_lqPhm7Zwjg/view?utm_content=DAGl0Uaf4dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc200dfdd9a" target="_blank" class="menu-link">求職履歷</a>
+          </div>
+        </div>
+      </div>
+  </div>
 
   
 <div class="top-section">
@@ -72,6 +69,17 @@
     </div>
   </div>
 
+  <div class="bottom-section">
+    <div class="info-text">
+      <td>
+        <h2>先放個春日影</h2>
+        <iframe src="https://www.youtube.com/embed/NJ1tne9u8YM" allowfullscreen></iframe>
+      </td>
+    </div>
+  </div>
+
+  
+
 <style>
   body {
 
@@ -89,23 +97,54 @@
   padding: 0;
 }
 
+.menu-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1001;
+  background-color: #f8f9fa;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 對應 Bootstrap 的 gap-2 */
+
+  border: 1px solid #dee2e6; /* Bootstrap 預設 border 顏色 */
+  border-radius: 0.25rem; /* Bootstrap 的 rounded */
+  padding: 0.5rem 0.75rem; /* 對應 Bootstrap 的 px-3 py-2 */
+}
+
+
+.menu-icon{
+  font-size: 20px; 
+  font-weight: bold; 
+  font-family: 'Microsoft JhengHei', sans-serif; 
+  color: #333;
+}
+
+.line{
+  width: 25px; 
+  height: 2px; 
+  background: black; 
+  margin: 4px 0;
+}
+
 .menu-close {
-      background-image: url("images/close.svg");
-      background-position: 75% 25%;
-      background-repeat: no-repeat;
-      background-size: 2em 2em;
-      border: 0;
-      content: '';
-      display: block;
-      height: 4em;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      text-indent: 4em;
-      top: 0;
-      width: 4em;
-    }
+  background-image: url("images/close.svg");
+  background-position: 75% 25%;
+  background-repeat: no-repeat;
+  background-size: 2em 2em;
+  border: 0;
+  content: '';
+  display: block;
+  height: 4em;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-indent: 4em;
+  top: 0;
+  width: 4em;
+}
 
 .menu-line {
   border-color: #f8f9fa;
